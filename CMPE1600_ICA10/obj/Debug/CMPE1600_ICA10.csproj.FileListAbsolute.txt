@@ -18,3 +18,4 @@ C:\Users\William\Documents\University\NAIT\Comp Engineering Tech\Year 1 Sem 2\CM
 C:\Users\William\Documents\University\NAIT\Comp Engineering Tech\Year 1 Sem 2\CMPE 1600\CMPE1600_ICA10\CMPE1600_ICA10\obj\Debug\CMPE1600_ICA10.exe
 C:\Users\William\Documents\University\NAIT\Comp Engineering Tech\Year 1 Sem 2\CMPE 1600\CMPE1600_ICA10\CMPE1600_ICA10\obj\Debug\CMPE1600_ICA10.pdb
 C:\Users\William\Documents\University\NAIT\Comp Engineering Tech\Year 1 Sem 2\CMPE 1600\CMPE1600_ICA10\CMPE1600_ICA10\obj\Debug\CMPE1600_ICA10.SizeDialog.resources
+C:\Users\William\Documents\University\NAIT\Comp Engineering Tech\Year 1 Sem 2\CMPE 1600\CMPE1600_ICA10\CMPE1600_ICA10\bin\Debug\GDIDrawer.dll

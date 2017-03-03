@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UI_ColorDialogCheck = new System.Windows.Forms.CheckBox();
             this.UI_SizeDialogCheck = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UI_ColorLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.UI_SizeLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // UI_ColorDialogCheck
@@ -99,6 +101,11 @@
             this.UI_SizeLabel.TabIndex = 5;
             this.UI_SizeLabel.Text = "10";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +133,7 @@
         private System.Windows.Forms.Label UI_ColorLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label UI_SizeLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

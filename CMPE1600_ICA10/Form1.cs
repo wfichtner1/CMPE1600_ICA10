@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GDIDrawer;
 
 namespace CMPE1600_ICA10
 {
@@ -15,13 +16,17 @@ namespace CMPE1600_ICA10
         ColorDialog coldiag = null;
         SizeDialog sizediag = null;
         int circleSize = 10;
+        CDrawer canvas = new CDrawer();
+        Color customCol = new Color();
+        
         
         //Callback method invoked by color dialog
         private void CallbackColor(int  red, int green, int blue)
         {
-            UI_ColorLabel.BackColor = Color.FromArgb(red, green, blue);
+            customCol = Color.FromArgb(red, green, blue);
+            UI_ColorLabel.BackColor = customCol;
         }
-
+        //Callback method invoked by size dialog
         private void CallBackSize(int size)
         {
             circleSize = size;
@@ -30,8 +35,10 @@ namespace CMPE1600_ICA10
         public Form1()
         {
             InitializeComponent();
+            
+           
         }
-                
+        //when box is checked, initializes color dialog and delegates
         private void UI_ColorDialogCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (UI_ColorDialogCheck.Checked)
@@ -47,7 +54,7 @@ namespace CMPE1600_ICA10
             else
                 coldiag.Hide();
         }
-
+        //when box is checked, initializes size dialog and delegates
         private void UI_SizeDialogCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (UI_SizeDialogCheck.Checked)
@@ -63,13 +70,24 @@ namespace CMPE1600_ICA10
             else
                 sizediag.Hide();
         }
+        //when color dialog closes, unchecks box
         private void CallbackColClosing()
         {
             UI_ColorDialogCheck.Checked = false;
         }
+        //when size dialog closes, unchecks box
         private void CallbackSizeClosing()
         {
             UI_SizeDialogCheck.Checked = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Point ptClick;
+            if (canvas.GetLastMouseLeftClick(out ptClick))
+            {
+                canvas.AddCenteredEllipse(ptClick.X, ptClick.Y, circleSize, circleSize, customCol);
+            }
         }
     }
 }
