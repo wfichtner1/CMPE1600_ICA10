@@ -80,7 +80,7 @@ namespace CMPE1600_ICA10
         {
             UI_SizeDialogCheck.Checked = false;
         }
-
+        //Allows for clicks
         private void timer1_Tick(object sender, EventArgs e)
         {
             Point ptClick;

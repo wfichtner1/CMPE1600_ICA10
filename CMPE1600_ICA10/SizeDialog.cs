@@ -49,5 +49,10 @@ namespace CMPE1600_ICA10
                 Hide();
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
