@@ -40,6 +40,7 @@ namespace CMPE1600_ICA10
                 {
                     coldiag = new ColorDialog();
                     coldiag._dColorChange = new delVoidIntIntInt(CallbackColor);
+                    coldiag._dColFormClosing = new delColVoidVoid(CallbackColClosing);
                 }
                 coldiag.Show();
             }
@@ -55,11 +56,20 @@ namespace CMPE1600_ICA10
                 {
                     sizediag = new SizeDialog();
                     sizediag._dSizeChanged = new delVoidInt(CallBackSize);
+                    sizediag._dSizeFormClosing = new delSizeVoidVoid(CallbackSizeClosing);
                 }
                 sizediag.Show();
             }
             else
                 sizediag.Hide();
+        }
+        private void CallbackColClosing()
+        {
+            UI_ColorDialogCheck.Checked = false;
+        }
+        private void CallbackSizeClosing()
+        {
+            UI_SizeDialogCheck.Checked = false;
         }
     }
 }

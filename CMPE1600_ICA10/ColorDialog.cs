@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace CMPE1600_ICA10
 {
     public delegate void delVoidIntIntInt(int red, int green, int blue);
+    public delegate void delColVoidVoid();
     public partial class ColorDialog : Form
     {
         int red = 0;
@@ -18,6 +19,7 @@ namespace CMPE1600_ICA10
         int blue = 0;
 
         public delVoidIntIntInt _dColorChange = null;
+        public delColVoidVoid _dColFormClosing = null;
 
         public ColorDialog()
         {
@@ -47,11 +49,14 @@ namespace CMPE1600_ICA10
 
         private void ColorDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(e.CloseReason == CloseReason.UserClosing)
+            if (e.CloseReason == CloseReason.UserClosing)
             {
+                if (null != _dColFormClosing)
+                {
+                    _dColFormClosing();
+                }
                 e.Cancel = true;
                 Hide();
-
             }
         }
     }

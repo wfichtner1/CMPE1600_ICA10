@@ -74,6 +74,7 @@
             this.Controls.Add(this.trackBar1);
             this.Name = "SizeDialog";
             this.Text = "Size";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SizeDialog_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
